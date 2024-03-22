@@ -1,6 +1,7 @@
-import { useState } from "react"
+import React, { useState } from "react"
 import { addRoom } from "../utils/ApiFunctions"
 import RoomTypeSelector from "../common/RoomTypeSelector"
+import { Link } from "react-router-dom"
 
 const AddRoom = () => {
 	const [newRoom, setNewRoom] = useState({
@@ -34,11 +35,10 @@ const AddRoom = () => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault()
-
 		try {
 			const success = await addRoom(newRoom.photo, newRoom.roomType, newRoom.roomPrice)
 			if (success !== undefined) {
-				setSuccessMessage("A new room was  added successfully!")
+				setSuccessMessage("A new room was  added successfully !")
 				setNewRoom({ photo: null, roomType: "", roomPrice: "" })
 				setImagePreview("")
 				setErrorMessage("")
@@ -114,6 +114,9 @@ const AddRoom = () => {
 								)}
 							</div>
 							<div className="d-grid gap-2 d-md-flex mt-2">
+								<Link to={"/existing-rooms"} className="btn btn-outline-info">
+									Existing rooms
+								</Link>
 								<button type="submit" className="btn btn-outline-primary ml-5">
 									Save Room
 								</button>
