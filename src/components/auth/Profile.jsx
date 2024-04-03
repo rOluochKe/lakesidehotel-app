@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { deleteUser, getBookingsByUserId, getUser } from "../utils/ApiFunctions"
 import { useNavigate } from "react-router-dom"
 import moment from "moment"
@@ -21,6 +21,7 @@ const Profile = () => {
 			bookingConfirmationCode: ""
 		}
 	])
+
 	const [message, setMessage] = useState("")
 	const [errorMessage, setErrorMessage] = useState("")
 	const navigate = useNavigate()

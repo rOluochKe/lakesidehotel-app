@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { getAllRooms } from "../utils/ApiFunctions"
 import { Link } from "react-router-dom"
 import { Card, Carousel, Col, Container, Row } from "react-bootstrap"
@@ -24,7 +24,6 @@ const RoomCarousel = () => {
 	if (isLoading) {
 		return <div className="mt-5">Loading rooms....</div>
 	}
-
 	if (errorMessage) {
 		return <div className=" text-danger mb-5 mt-5">Error : {errorMessage}</div>
 	}

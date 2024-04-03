@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { getRoomById, updateRoom } from "../utils/ApiFunctions"
 import { Link, useParams } from "react-router-dom"
 
@@ -137,5 +137,4 @@ const EditRoom = () => {
 		</div>
 	)
 }
-
 export default EditRoom

@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import { useState } from "react"
 import moment from "moment"
 import { cancelBooking, getBookingByConfirmationCode } from "../utils/ApiFunctions"
 

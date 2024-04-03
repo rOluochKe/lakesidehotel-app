@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { deleteRoom, getAllRooms } from "../utils/ApiFunctions"
 import { Col, Row } from "react-bootstrap"
 import RoomFilter from "../common/RoomFilter"
@@ -12,7 +12,7 @@ const ExistingRooms = () => {
 	const [roomsPerPage] = useState(8)
 	const [isLoading, setIsLoading] = useState(false)
 	const [filteredRooms, setFilteredRooms] = useState([{ id: "", roomType: "", roomPrice: "" }])
-	const [selectedRoomType, setSelectedRoomType] = useState("")
+	const [selectedRoomType] = useState("")
 	const [errorMessage, setErrorMessage] = useState("")
 	const [successMessage, setSuccessMessage] = useState("")
 
@@ -77,6 +77,7 @@ const ExistingRooms = () => {
 		<>
 			<div className="container col-md-8 col-lg-6">
 				{successMessage && <p className="alert alert-success mt-5">{successMessage}</p>}
+
 				{errorMessage && <p className="alert alert-danger mt-5">{errorMessage}</p>}
 			</div>
 

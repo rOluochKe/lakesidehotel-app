@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import { useState } from "react"
 import { registerUser } from "../utils/ApiFunctions"
 import { Link } from "react-router-dom"
 

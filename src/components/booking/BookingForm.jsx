@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import { useEffect } from "react"
 import moment from "moment"
 import { useState } from "react"
 import { Form, FormControl } from "react-bootstrap"
@@ -12,8 +12,11 @@ const BookingForm = () => {
 	const [errorMessage, setErrorMessage] = useState("")
 	const [roomPrice, setRoomPrice] = useState(0)
 
+const currentUser = localStorage.getItem("userId")
+
 	const [booking, setBooking] = useState({
 		guestFullName: "",
+		guestEmail: currentUser,
 		checkInDate: "",
 		checkOutDate: "",
 		numOfAdults: "",
@@ -102,7 +105,7 @@ const BookingForm = () => {
 							<Form noValidate validated={validated} onSubmit={handleSubmit}>
 								<Form.Group>
 									<Form.Label htmlFor="guestFullName" className="hotel-color">
-										Full name
+										Fullname
 									</Form.Label>
 									<FormControl
 										required
@@ -110,7 +113,7 @@ const BookingForm = () => {
 										id="guestFullName"
 										name="guestFullName"
 										value={booking.guestFullName}
-										placeholder="Enter your full name"
+										placeholder="Enter your fullname"
 										onChange={handleInputChange}
 									/>
 									<Form.Control.Feedback type="invalid">
